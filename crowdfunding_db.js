@@ -41,3 +41,12 @@ app.get('/api/fundraisers', (req, res) => {
     res.json(results);
   });
 });
+
+// API to fetch all the categories
+app.get('/api/categories', (req, res) => {
+  const query = `SELECT * FROM CATEGORY`;
+  db.query(query, (err, results) => {
+      if (err) throw err;
+      res.json(results);
+  });
+});
