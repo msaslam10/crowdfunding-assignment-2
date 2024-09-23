@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="app.css" />
     <title>Crowdfunding</title>
   </head>
@@ -26,11 +27,27 @@
     </nav>
 
     <div class="hero-section">
-      <h1>Welcome to Crowdfunding website</h1>
-      <p>Active Fundraisers</p>
+      <div class="hero-content">
+        <h1>Welcome to Crowdfunding website</h1>
+        <p style="margin-bottom: 12px">
+          Join us in making a difference! Our crowdfunding platform empowers
+          individuals and organizations to raise funds for impactful projects
+          that change lives. Whether you’re supporting a creative initiative, a
+          charitable cause, or a community-driven effort, together we can turn
+          ideas into reality. Get started today and be a part of something
+          bigger!"
+        </p>
+        <button>See All Fundraisers</button>
+      </div>
+
+      <img src="./happy-man.png" alt="happy-man" width="400px" />
+    </div>
+
+    <div class="fundraiser-container">
+      <h2>Active Fundraisers</h2>
       <div id="fundraiser-list"></div>
     </div>
-    <div id="content"></div>
+    
     <script src="app.js" />
   </body>
 </html>
