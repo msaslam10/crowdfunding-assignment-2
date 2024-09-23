@@ -1,3 +1,6 @@
+* {
+  font-family: 'Poppins', system-ui;
+}
 .container {
   max-width: 1050px;
   margin: auto;
@@ -23,3 +26,43 @@
   text-decoration: none;
 }
 
+#fundraiser-list {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); 
+  gap: 20px; 
+}
+
+#fundraiser-list div {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#fundraiser-list h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#fundraiser-list p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+#fundraiser-list button {
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#fundraiser-list button:hover {
+  background-color: #0056b3;
+}
