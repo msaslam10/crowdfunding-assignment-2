@@ -12,19 +12,19 @@ const fetchDetails = async (id) => {
         fundraiser.CAPTION;
       document.getElementById(
         'fundraiser-organizer'
-      ).innerHTML = `<strong>Organizer:</strong> ${fundraiser.ORGANIZER}`;
+      ).innerHTML = `<p style="margin-bottom:4px"><strong style="font-size: 20px;">Organizer:</strong> ${fundraiser.ORGANIZER}</p>`;
       document.getElementById(
         'fundraiser-target'
-      ).innerHTML = `<strong>Target Funding:</strong> ${fundraiser.TARGET_FUNDING}`;
+      ).innerHTML = `<p style="margin-bottom:4px"><strong style="font-size: 20px">Target Funding:</strong> ${fundraiser.TARGET_FUNDING}</p>`;
       document.getElementById(
         'fundraiser-current'
-      ).innerHTML = `<strong>Current Funding:</strong> ${fundraiser.CURRENT_FUNDING}`;
+      ).innerHTML = `<p style="margin-bottom:4px";><strong style="font-size: 20px">Current Funding:</strong> ${fundraiser.CURRENT_FUNDING}</p>`;
       document.getElementById(
         'fundraiser-city'
-      ).innerHTML = `<strong>City:</strong> ${fundraiser.CITY}`;
+      ).innerHTML = `<p style="margin-bottom:4px"><strong style="font-size: 20px">City:</strong> ${fundraiser.CITY}</p>`;
       document.getElementById(
         'fundraiser-category'
-      ).innerHTML = `<strong>Category:</strong> ${fundraiser.CATEGORY}`;
+      ).innerHTML = `<strong style="font-size: 20px">Category:</strong> ${fundraiser.CATEGORY}`;
     });
 };
 
