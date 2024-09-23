@@ -1,7 +1,6 @@
 require('dotenv').config(); // to load env
 
 const mysql = require('mysql2');
-const bodyParser = require('body-parser');
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -46,7 +45,60 @@ app.get('/api/fundraisers', (req, res) => {
 app.get('/api/categories', (req, res) => {
   const query = `SELECT * FROM CATEGORY`;
   db.query(query, (err, results) => {
-      if (err) throw err;
+    if (err) throw err;
+    res.json(results);
+  });
+});
+
+// API to search fundraisers
+app.get('/api/fundraisers/search', (req, res) => {
+  // query parameters for search filters
+  const { organizer, city, category } = req.query;
+
+  // Query to fetch active fundraisers
+  let query = `
+      SELECT 
+          FUNDRAISER.FUNDRAISER_ID, 
+          ORGANIZER, 
+          CAPTION, 
+          TARGET_FUNDING, 
+          CURRENT_FUNDING, 
+          CITY, 
+          CATEGORY.NAME AS CATEGORY
+      FROM 
+          FUNDRAISER
+      JOIN 
+          CATEGORY ON FUNDRAISER.CATEGORY_ID = CATEGORY.CATEGORY_ID
+      WHERE 
+          ACTIVE = true
+  `;
+
+  // Array to hold query parameters
+  const params = [];
+
+  // Organizer filter
+  if (organizer) {
+      query += ` AND ORGANIZER LIKE ?`;
+      params.push(`%${organizer}%`);
+  }
+
+  // City Filter
+  if (city) {
+      query += ` AND CITY LIKE ?`;
+      params.push(`%${city}%`);
+  }
+
+  // Category Filter
+  if (category) {
+      query += ` AND CATEGORY.NAME = ?`;
+      params.push(category);
+  }
+
+  db.query(query, params, (err, results) => {
+      if (err) {
+          console.error('Database query error:', err);
+          return res.status(500).json({ error: 'An error occurred while searching for fundraisers.' });
+      }
       res.json(results);
   });
 });
