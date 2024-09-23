@@ -12,22 +12,19 @@ const fetchDetails = async (id) => {
         fundraiser.CAPTION;
       document.getElementById(
         'fundraiser-organizer'
-      ).textContent = `Organizer: ${fundraiser.ORGANIZER}`;
+      ).innerHTML = `<strong>Organizer:</strong> ${fundraiser.ORGANIZER}`;
       document.getElementById(
         'fundraiser-target'
-      ).textContent = `Target Funding: ${fundraiser.TARGET_FUNDING}`;
+      ).innerHTML = `<strong>Target Funding:</strong> ${fundraiser.TARGET_FUNDING}`;
       document.getElementById(
         'fundraiser-current'
-      ).textContent = `Current Funding: ${fundraiser.CURRENT_FUNDING}`;
+      ).innerHTML = `<strong>Current Funding:</strong> ${fundraiser.CURRENT_FUNDING}`;
       document.getElementById(
         'fundraiser-city'
-      ).textContent = `City: ${fundraiser.CITY}`;
+      ).innerHTML = `<strong>City:</strong> ${fundraiser.CITY}`;
       document.getElementById(
         'fundraiser-category'
-      ).textContent = `Category: ${fundraiser.CATEGORY}`;
-      document.getElementById(
-        'fundraiser-description'
-      ).textContent = `Description: ${fundraiser.DESCRIPTION}`;
+      ).innerHTML = `<strong>Category:</strong> ${fundraiser.CATEGORY}`;
     });
 };
 

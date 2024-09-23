@@ -8,10 +8,8 @@ const fetchFundraisers = async () => {
         div.innerHTML = `
           <h2>${fundraiser.CAPTION}</h2>
           <p>Organizer: ${fundraiser.ORGANIZER}</p>
-          <p>Target Funding: ${fundraiser.TARGET_FUNDING}</p>
-          <p>Current Funding: ${fundraiser.CURRENT_FUNDING}</p>
+          <p><strong>${fundraiser.CURRENT_FUNDING}</strong> off <strong>${fundraiser.TARGET_FUNDING}</strong> done</p>
           <p>City: ${fundraiser.CITY}</p>
-          <p>Category: ${fundraiser.CATEGORY}</p>
           <button class="details-btn" data-id="${fundraiser.FUNDRAISER_ID}">View Details</button>
         `;
         fundraiserList.appendChild(div);

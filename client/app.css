@@ -117,3 +117,12 @@ footer p {
   margin: 20px 0px;
 }
 
+
+.hero-img{
+  object-fit: cover;
+}
+
+.details-container h2{
+  padding: 16px 0px;
+  
+}
