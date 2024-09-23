@@ -12,9 +12,17 @@ const fetchFundraisers = async () => {
           <p>Current Funding: ${fundraiser.CURRENT_FUNDING}</p>
           <p>City: ${fundraiser.CITY}</p>
           <p>Category: ${fundraiser.CATEGORY}</p>
-          <button class="details-btn" data-id="${fundraiser.ID}">View Details</button>
+          <button class="details-btn" data-id="${fundraiser.FUNDRAISER_ID}">View Details</button>
         `;
         fundraiserList.appendChild(div);
+      });
+
+      document.querySelectorAll('.details-btn').forEach((detailBtn) => {
+        detailBtn.addEventListener('click', (event) => {
+          const fundraiserId = event.target.getAttribute('data-id');
+          console.log(fundraiserId);
+          window.location.href = `/client/details.html?id=${fundraiserId}`;
+        });
       });
     });
 };
