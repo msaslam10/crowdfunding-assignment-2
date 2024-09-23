@@ -12,7 +12,7 @@ const fetchFundraisers = async () => {
           <p>Current Funding: ${fundraiser.CURRENT_FUNDING}</p>
           <p>City: ${fundraiser.CITY}</p>
           <p>Category: ${fundraiser.CATEGORY}</p>
-          <button>View Details</button>
+          <button class="details-btn" data-id="${fundraiser.ID}">View Details</button>
         `;
         fundraiserList.appendChild(div);
       });
