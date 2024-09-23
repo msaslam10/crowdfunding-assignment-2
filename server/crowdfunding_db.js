@@ -102,3 +102,21 @@ app.get('/api/fundraisers/search', (req, res) => {
       res.json(results);
   });
 });
+
+// Getting Fundraiser by ID
+app.get('/api/fundraisers/:id', (req, res) => {
+  const query = `
+      SELECT FUNDRAISER.FUNDRAISER_ID, ORGANIZER, CAPTION, TARGET_FUNDING, CURRENT_FUNDING, CITY, NAME as CATEGORY
+      FROM FUNDRAISER
+      JOIN CATEGORY ON FUNDRAISER.CATEGORY_ID = CATEGORY.CATEGORY_ID
+      WHERE FUNDRAISER_ID = ? AND ACTIVE = true;
+  `;
+  
+  db.query(query, [req.params.id], (err, result) => {
+      if (err) throw err;
+      if (result.length === 0) {
+          return res.status(404).send('Fundraiser not found');
+      }
+      res.json(result[0]);
+  });
+});
