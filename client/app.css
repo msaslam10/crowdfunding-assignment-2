@@ -105,3 +105,14 @@ button:hover {
 .fundraiser-container h2 {
   margin-bottom: 30px;
 }
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  font-size: 10px;
+  margin: 20px 0px;
+}
