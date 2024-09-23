@@ -3,15 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css">
     <title>Crowdfunding</title>
   </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="#" id="homeLink">Home</a></li>
-        <li><a href="#" id="searchLink">Search Fundraisers</a></li>
+  <body class="container">
+    <nav class="nav">
+      <h2>Crowdfunding</h2>
+      <ul class="nav-list">
+        <li class="list-item"><a href="/client/index.html" id="homeLink">Home</a></li>
+        <li class="list-item"><a href="#" id="searchLink">Search Fundraisers</a></li>
       </ul>
     </nav>
+
+    <div>
+      <h1>Welcome to Crowdfunding website</h1>
+      <p>Active Fundraisers</p>
+      <div id="fundraiser-list">
+        
+      </div>
+    </div>
     <div id="content"></div>
     <script src="app.js" />
   </body>

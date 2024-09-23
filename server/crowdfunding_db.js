@@ -1,4 +1,5 @@
 require('dotenv').config(); // to load env
+const cors = require('cors');
 
 const mysql = require('mysql2');
 
@@ -25,7 +26,13 @@ app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
 
-// as application is small so we use app.get() instead of router.get()
+app.use(cors());
+
+app.use(
+  cors({
+    origin: 'http://localhost:5500',
+  })
+);
 
 // API to get fundraiser information
 app.get('/api/fundraisers', (req, res) => {
@@ -78,28 +85,30 @@ app.get('/api/fundraisers/search', (req, res) => {
 
   // Organizer filter
   if (organizer) {
-      query += ` AND ORGANIZER LIKE ?`;
-      params.push(`%${organizer}%`);
+    query += ` AND ORGANIZER LIKE ?`;
+    params.push(`%${organizer}%`);
   }
 
   // City Filter
   if (city) {
-      query += ` AND CITY LIKE ?`;
-      params.push(`%${city}%`);
+    query += ` AND CITY LIKE ?`;
+    params.push(`%${city}%`);
   }
 
   // Category Filter
   if (category) {
-      query += ` AND CATEGORY.NAME = ?`;
-      params.push(category);
+    query += ` AND CATEGORY.NAME = ?`;
+    params.push(category);
   }
 
   db.query(query, params, (err, results) => {
-      if (err) {
-          console.error('Database query error:', err);
-          return res.status(500).json({ error: 'An error occurred while searching for fundraisers.' });
-      }
-      res.json(results);
+    if (err) {
+      console.error('Database query error:', err);
+      return res
+        .status(500)
+        .json({ error: 'An error occurred while searching for fundraisers.' });
+    }
+    res.json(results);
   });
 });
 
@@ -111,12 +120,12 @@ app.get('/api/fundraisers/:id', (req, res) => {
       JOIN CATEGORY ON FUNDRAISER.CATEGORY_ID = CATEGORY.CATEGORY_ID
       WHERE FUNDRAISER_ID = ? AND ACTIVE = true;
   `;
-  
+
   db.query(query, [req.params.id], (err, result) => {
-      if (err) throw err;
-      if (result.length === 0) {
-          return res.status(404).send('Fundraiser not found');
-      }
-      res.json(result[0]);
+    if (err) throw err;
+    if (result.length === 0) {
+      return res.status(404).send('Fundraiser not found');
+    }
+    res.json(result[0]);
   });
 });
