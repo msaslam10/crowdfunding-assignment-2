@@ -41,7 +41,14 @@ const fetchSearch = async(queryStr) => {
 
 const displayResults = (results) => {
     const resultsContainer = document.getElementById('search-results');
-    //
+    // clear result container
+    resultsContainer.innerHTML = ''
+
+    // handle 0 results case
+    if(results.length === 0){
+        resultsContainer.innerHTML = '<p style="color: red; font-weight: bold;">No fundraisers found.</p>';
+    return;
+    }
 
     results.forEach(fundraiser => {
         const div = document.createElement('div');
