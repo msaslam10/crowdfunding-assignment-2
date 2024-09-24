@@ -26,3 +26,10 @@ const fetchFundraisers = async () => {
 };
 
 fetchFundraisers();
+
+const seeFundraiserButton = document.getElementById('see-fundraiser');
+const activeFundraiser = document.getElementById('fundraiser-list');
+
+seeFundraiserButton.addEventListener('click', () => {
+  activeFundraiser.scrollIntoView({ behavior: 'smooth' });
+});
