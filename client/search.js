@@ -32,8 +32,29 @@ const fetchSearch = async(queryStr) => {
     if(res.ok){
         // Display results
         console.log(data)
+        displayResults(data)
     } else {
         document.getElementById('search-results').innerHTML =
           '<p>An error occurred while searching.</p>';
     }
+}
+
+const displayResults = (results) => {
+    const resultsContainer = document.getElementById('search-results');
+    //
+
+    results.forEach(fundraiser => {
+        const div = document.createElement('div');
+        // div.classList.add('results-container');
+        div.innerHTML = `
+            <h3>${fundraiser.CAPTION}</h3>
+            <p>Organizer: ${fundraiser.ORGANIZER}</p>
+            <p>Target Funding: ${fundraiser.TARGET_FUNDING}</p>
+            <p>Current Funding: ${fundraiser.CURRENT_FUNDING}</p>
+            <p>City: ${fundraiser.CITY}</p>
+            <p>Category: ${fundraiser.CATEGORY}</p>
+            <button onclick="window.location.href='/client/details.html?id=${fundraiser.FUNDRAISER_ID}'">View Details</button>
+        `;
+        resultsContainer.appendChild(div);
+    });
 }
