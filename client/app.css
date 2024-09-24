@@ -240,3 +240,30 @@ input {
   gap: 60px;
   margin: 80px 0px;
 }
+
+#contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  min-height: 400px;
+  padding: 20px 10px;
+  margin: 80px 0px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.contact-item p {
+  font-size: 14px;
+}
