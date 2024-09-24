@@ -7,16 +7,16 @@ document.getElementById("search-form").addEventListener("submit", (event) => {
     const categoryInput = document.getElementById('category').value;
 
     // query string
-    let queryStr = '/api/fundraisers/search?';
+    let queryStr = 'http://localhost:3000/api/fundraisers/search?';
     if(organizerInput) queryStr += `organizer=${encodeURIComponent(organizerInput)}&`;
-    if(cityInput) queryStr += `city=${encodeURIComponent(city)}&`;
-    if(categoryInput) queryStr += `category=${encodeURIComponent(categoryInput)}`;
+    if(cityInput) queryStr += `city=${encodeURIComponent(cityInput)}&`;
+    if(categoryInput) queryStr += `category=${encodeURIComponent(categoryInput)}&`;
 
     queryStr = queryStr.slice(0, -1);
 
     // API Function
     try{
-        fetchSearch()
+        fetchSearch(queryStr)
     } catch(err){
         console.error('Error fetching search results:', error);
       document.getElementById('search-results').innerHTML =
@@ -65,3 +65,12 @@ const displayResults = (results) => {
         resultsContainer.appendChild(div);
     });
 }
+
+const clearValues = () => {
+    document.getElementById('organizer').value = '';
+    document.getElementById('city').value = '';
+    document.getElementById('category').value = '';
+    document.getElementById('search-results').innerHTML = '';
+  }
+
+const clearBtn = document.getElementById("clear-btn").addEventListener("click", clearValues)

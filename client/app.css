@@ -126,3 +126,14 @@ footer p {
   padding: 16px 0px;
   
 }
+
+#clear-btn{
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+#clear-btn-container {
+  margin: 20px;
+  text-align: center;
+}
