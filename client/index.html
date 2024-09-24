@@ -13,20 +13,23 @@
     <link rel="stylesheet" href="app.css" />
     <title>CrowdGist</title>
   </head>
-  <body class="container">
-    <nav class="nav">
-      <h2>CrowdGist</h2>
-      <ul class="nav-list">
-        <li class="list-item">
-          <a href="/client/index.html" id="homeLink">Home</a>
-        </li>
-        <li class="list-item">
-          <a href="/client/search.html" id="searchLink">Search Fundraisers</a>
-        </li>
-      </ul>
-    </nav>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <h2>CrowdGist</h2>
+        <ul class="nav-list">
+          <li class="list-item">
+            <a href="/client/index.html" id="homeLink">Home</a>
+          </li>
+          <li class="list-item">
+            <a href="/client/search.html" id="searchLink">Search Fundraisers</a>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="hero-section">
+    </div>
+
+    <div class="hero-section container">
       <div class="hero-content">
         <h1>Welcome to CrowdGist website</h1>
         <p style="margin-bottom: 12px">
@@ -43,12 +46,23 @@
       <img src="./happy-man.png" alt="happy-man" width="400px" />
     </div>
 
-    <div class="fundraiser-container">
+    <div id="mission-section">
+      <h2>Our Mission</h2>
+      <p class="mission-para">
+        At crowdGist, we believe in the power of community-driven change. Our
+        mission is to empower individuals and communities to come together to
+        support one another in times of need. We strive to provide a platform
+        that connects passionate supporters with those in need of assistance,
+        ensuring that no one has to face their challenges alone.
+      </p>
+    </div>
+
+    <div class="fundraiser-container container">
       <h2>Active Fundraisers</h2>
       <div id="fundraiser-list"></div>
     </div>
 
-    <footer><p>@copyright 2024 crowdfunding</p></footer>
+    <footer class="container"><p>@copyright 2024 crowdfunding</p></footer>
 
     <script src="app.js" />
   </body>

@@ -127,6 +127,8 @@ footer p {
   
 }
 
+/* Clear button on Search page */
+
 #clear-btn{
   background-color: #fff;
   border: 1px solid #000;
@@ -137,6 +139,8 @@ footer p {
   margin: 20px;
   text-align: center;
 }
+
+/* Search Page */
 
 #search-results {
   display: grid;
@@ -168,4 +172,22 @@ footer p {
 #search-results p {
   font-size: 14px;
   margin: 8px 0;
+}
+
+/* Mission Section */
+
+#mission-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  min-height: 400px;
+  padding: 20px 10px;
+  margin-bottom: 80px;
+}
+
+.mission-para {
+  max-width: 600px;
+  margin-top: 20px;
 }
