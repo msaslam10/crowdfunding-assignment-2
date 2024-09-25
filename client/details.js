@@ -42,3 +42,7 @@ const fetchDetails = async (id) => {
 if (fundraiserId) {
   fetchDetails(fundraiserId);
 }
+
+const donateButton = document.getElementById("donate").addEventListener("click", () => {
+  alert("Function under construction")
+})
