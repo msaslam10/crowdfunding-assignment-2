@@ -20,13 +20,49 @@
     </nav>
 
     <div class="details-container">
-      <img class="hero-img" src="https://images.unsplash.com/photo-1582016609297-053772cc6649?q=80&w=2810&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="100%" alt="people">
+      <img
+        class="hero-img"
+        src="https://images.unsplash.com/photo-1582016609297-053772cc6649?q=80&w=2810&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        height="400px"
+        width="100%"
+        alt="people"
+      />
       <h2 id="fundraiser-caption">Fundraiser Title</h2>
-      <div id="fundraiser-organizer">Organizer:</div>
-      <div id="fundraiser-target">Target Funding:</div>
-      <div id="fundraiser-current">Current Funding:</div>
-      <div id="fundraiser-city">City:</div>
+      <progress ></progress>
+      <div class="fundraiser-details">
+        <div id="fundraiser-organizer">Organizer:</div>
+        <div class="fundraiser-city">
+          <img src="./imgs/address-icon.png" alt="address" />
+          <div id="fundraiser-city">City</div>
+        </div>
+      </div>
+
+      <p>
+        Your generosity has the power to create lasting change. When you donate,
+        you are not merely offering financial support; you are giving people the
+        opportunity to overcome hardships and thrive. Whether it’s funding
+        medical treatments, ensuring children have access to education, or
+        supporting communities during critical times, your contribution provides
+        hope where it is needed most. Every donation is a step towards a
+        brighter future, fueling progress, and enabling life-changing
+        opportunities. By standing with us, you help build a world where
+        compassion and action can transform lives and inspire others to do the
+        same. Together, we can make a profound difference that echoes far beyond
+        today.
+      </p>
+
+      <div class="flex">
+        <div>
+          <p id="fundraiser-current"></p>
+        </div>
+        <div>
+          <p id="fundraiser-target"></p>
+        </div>
+      </div>
+
       <div id="fundraiser-category">Category:</div>
+
+      <button id="donate">Donate</button>
     </div>
 
     <footer><p>@copyright 2024 crowdfunding</p></footer>
